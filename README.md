@@ -43,6 +43,34 @@ ________________________________________________________________________________
 
 ____________________________________________________________________________________________________________________________________________________________________________________________________________________
 ____________________________________________________________________________________________________________________________________________________________________________________________________________________
+-------> Desacoplando camadas no NestJs:
+
+----------| Camadas: |-----------
+
+- Criação da camada de infraestrutura: essa camada será responsável por lidar com o framework Nest, o banco de dados e outras partes externas que não podem ser testadas unitariamente.
+- Implementação dos repositórios.
+- Implementação dos Mappers: que são responsáveis por converter uma entidade de um formato para outro, permitindo que diferentes camadas da aplicação trabalhem com representações diferentes da mesma entidade.
+- Continuação da alimentação do Prisma do projeto: adicionado um campo de "role" na tabela de usuários para definir se são alunos ou instrutores.
+- Alterações nos relacionamentos entre as tabelas de perguntas e respostas.
+
+----------| Fluxos: |-----------
+
+- listagem das perguntas.
+- Presenter na camada HTTP: é responsável por converter informações de um formato para outro.
+- criação do QuestionPresenter, que possui um método estático chamado toHTTP. Esse método recebe uma pergunta do domínio e retorna as informações no formato desejado para serem enviadas para o front-end.
+- Criação do cadastro e a autenticação de usuários, verificando se já existe um aluno com o mesmo email cadastrado.
+
+----------| Criptografias, Testes e Refatorações: |-----------
+
+- Uso do Bcrypt para comparar senhas de usuários e a criação de tokens encriptados usando uma chave privada.
+- a criptografia foi tratada na camada mais externa, utilizando uma classe Encrypter como um gateway entre os casos de uso e as funções de criptografia.
+- comparação da senha informada com a senha armazenada no banco de dados.
+- stubs para a parte de criptografia: é uma implementação fictícia de um contrato, usado para testes.
+- tratamento de erros específicos para cada situação. Por exemplo, ao cadastrar um aluno com um e-mail já existente, podemos retornar um erro de "aluno já existe".
+- Substituição do config.service do Nest, para um próprio serviço chamado env.service, facilitando a busca de variáveis ambientes.
+
+____________________________________________________________________________________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________________________________________________________________________________
 
 
 Tecnologias: JAVASCRIPT. TYPESCRIPT. NODEJS.
