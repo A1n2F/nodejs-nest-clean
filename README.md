@@ -71,6 +71,35 @@ ________________________________________________________________________________
 
 ____________________________________________________________________________________________________________________________________________________________________________________________________________________
 ____________________________________________________________________________________________________________________________________________________________________________________________________________________
+-------> Implementando Controllers e Testes:
+
+----------| Schema, Mappers e Factories: |-----------
+
+- Integrar a camada de domínio com a camada de persistência e a camada HTTP.
+- Cração das tabelas do banco de dados, os repositórios de acesso ao banco e os controllers da aplicação.
+- Criar mappers para todas as outras entidades do banco de dados, com o objetivo de converter as entidades da camada de domínio para entidades da camada de persistência, usando o Prisma.
+- Criar um Factory para a entidade Student usando o PrismaService.
+- Alterações nos testes E2E existentes, removendo referências ao PrismaService e substituindo pelo uso direto das Factories.
+
+----------| Schema, Mappers e Factories: |-----------
+
+- Controller: Buscar pergunta por Slug
+- Controller: Editar pergunta
+- Controller: Deletar pergunta
+- Controller: Responder pergunta
+- Controller: Editar resposta
+- Controller: Deletar resposta
+- Controller: Listar respostas da pergunta
+- Controller: Escolher melhor resposta
+- Controller: Comentar pergunta
+- Controller: Deletar comentário da pergunta
+- Controller: Comentar resposta
+- Controller: Deletar comentário da resposta
+- Controller: Listar comentário da pergunta
+- Controller: Listar comentários da resposta
+
+____________________________________________________________________________________________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________________________________________________________________________________________
 
 
 Tecnologias: JAVASCRIPT. TYPESCRIPT. NODEJS.
